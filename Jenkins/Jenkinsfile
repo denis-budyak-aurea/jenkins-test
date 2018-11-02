@@ -1,0 +1,17 @@
+//-*- mode: groovy; indent-tabs-mode: nil; c-basic-offset: 4 -*-
+//top-level node implies scripted pipeline, and a top-level pipeline implies declarative pipeline
+node('imi_wms_brodjaga_delphi_build') {
+    withEnv(['G2_RELEASE=2018']) {
+        stage('cleanup') {
+            bat '''
+echo this is cleanup stage. Environment is:
+set
+'''
+        }
+        stage('build') {
+            bat '''
+echo this is build stage.
+'''
+        }
+    }
+}
